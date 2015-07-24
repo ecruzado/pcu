@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="PCU.Web.Principal" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Primary Page Layout
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div class="container">
+            <nav>
+                <ul>
+                    <asp:Repeater ID="dlsSistemaMenu" runat="server">
+                        <ItemTemplate>
+                            <li>
+                                <a href="#"><%#((PCU.Librerias.EntidadesNegocio.beSistemaMenu)Container.DataItem).NombreSistemaMenu%></a>
+                                <ul>
+                                    <asp:Repeater ID="dlsSistemaSubMenu" runat="server" DataSource="<%# Menus.FindAll(x=>x.CodigoSistemaPadre.Equals(((PCU.Librerias.EntidadesNegocio.beSistemaMenu)Container.DataItem).CodigoSistemaMenu)) %>">
+                                        <ItemTemplate>
+                                            <li><a href="#"><%#((PCU.Librerias.EntidadesNegocio.beSistemaMenu)Container.DataItem).NombreSistemaMenu%></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </nav>
+            <div>
+                                <img id="imgConfiguraUsuario" src="../Imagenes/Iconos/Configura.png" alt="" title="Configuración" />
+                                <asp:Menu ID="mnuConfiguraUsuario" runat="server" RenderingMode="List" OnMenuItemClick="configurarOpcionesUsuario">
+                                    <Items>
+                                        <asp:MenuItem Text="Configuracion" Value="1"></asp:MenuItem>
+                                        <asp:MenuItem Text="Cambio Contraseña" Value="2"></asp:MenuItem>
+                                        <asp:MenuItem Text="Cerrar Sesion" Value="3"></asp:MenuItem>
+                                    </Items>
+                                </asp:Menu> 
+                <asp:Label ID="lblNombreSistema" runat="server" />
+                <asp:Label ID="lblHora" runat="server" />
+                <img id="imgEmpresa" width="50" height="50" alt="" runat="server"/>
+                <img id="imgUsuario" width="50" height="50" alt="" runat="server"/>
+                <asp:Label ID="lblUsuario" runat="server" />
+                <asp:Label ID="lblEmpresa" runat="server" />
+                <asp:Label ID="lblSede" runat="server" />
+                <asp:Button ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click" />
+                <asp:Button ID="btnContinuarSesion" runat="server" OnClick="btnContinuarSesion_Click" />
+                <asp:HiddenField ID="hdfTiempoSesion" runat="server" />
+                <asp:HiddenField ID="hdfTiempoUsuario" runat="server" />
+                <asp:HiddenField ID="hdfContador" runat="server" />
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">          
+                        </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!-- End Document
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    </form>
+
+</body>
+</html>
