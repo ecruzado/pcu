@@ -28,8 +28,6 @@ namespace PCU.Web
                 listarSistemaMenu();
                 lbeSistemaMenu = (List<beSistemaMenu>)Session["SistemaMenuUsuario"];
                 string codigoSistema = "10";
-                dlsSistemaMenu.DataSource = lbeSistemaMenu.FindAll(x => x.CodigoSistemaPadre.Equals(codigoSistema));
-                dlsSistemaMenu.DataBind();
             }
         }
     }

@@ -99,12 +99,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="CambioClave.aspx" />
+    <Content Include="Account\CambioClave.aspx" />
     <Content Include="CambioConfiguracion.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\skeleton.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Account\EnvioClave.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Imagenes\Iconos\Aceptar.png" />
     <Content Include="Imagenes\Iconos\Adicionar.png" />
@@ -134,13 +135,14 @@
     <Content Include="Imagenes\Usuarios\7.jpg" />
     <Content Include="Imagenes\Usuarios\8.jpg" />
     <Content Include="Imagenes\Usuarios\No.jpg" />
-    <Content Include="Login.aspx" />
+    <Content Include="Account\Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Index.aspx" />
     <Content Include="Principal.Master" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -198,11 +200,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CambioClave.aspx.cs">
+    <Compile Include="Account\CambioClave.aspx.cs">
       <DependentUpon>CambioClave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CambioClave.aspx.designer.cs">
+    <Compile Include="Account\CambioClave.aspx.designer.cs">
       <DependentUpon>CambioClave.aspx</DependentUpon>
     </Compile>
     <Compile Include="CambioConfiguracion.aspx.cs">
@@ -230,14 +232,21 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\EnvioClave.aspx.cs">
+      <DependentUpon>EnvioClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\EnvioClave.aspx.designer.cs">
+      <DependentUpon>EnvioClave.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">

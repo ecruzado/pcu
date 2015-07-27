@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="brGeneral.cs" />
+    <Compile Include="brPersona.cs" />
     <Compile Include="brSistemaMenu.cs" />
+    <Compile Include="brUbigeo.cs" />
     <Compile Include="brUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +59,10 @@
     <ProjectReference Include="..\PCU.Librerias.AccesoDatos\PCU.Librerias.AccesoDatos.csproj">
       <Project>{2c8ab96a-0791-4bb0-845c-f0a54f6cd600}</Project>
       <Name>PCU.Librerias.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCU.Librerias.AgentesServicio\PCU.Librerias.AgentesServicio.csproj">
+      <Project>{062412a3-a430-4b16-824c-451da5084621}</Project>
+      <Name>PCU.Librerias.AgentesServicio</Name>
     </ProjectReference>
     <ProjectReference Include="..\PCU.Librerias.EntidadesNegocio\PCU.Librerias.EntidadesNegocio.csproj">
       <Project>{b7dbf7b1-e750-4096-b305-69a6042f5b3f}</Project>

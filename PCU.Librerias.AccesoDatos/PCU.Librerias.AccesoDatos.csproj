@@ -39,11 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="daPersona.cs" />
+    <Compile Include="daPersonaTelefono.cs" />
     <Compile Include="daSistemaMenu.cs" />
+    <Compile Include="daUbigeo.cs" />
     <Compile Include="daUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\General.Librerias.EntidadesNegocio\General.Librerias.EntidadesNegocio.csproj">
+      <Project>{6d58261e-5a6b-4dcb-89d1-acd336259c92}</Project>
+      <Name>General.Librerias.EntidadesNegocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PCU.Librerias.EntidadesNegocio\PCU.Librerias.EntidadesNegocio.csproj">
       <Project>{b7dbf7b1-e750-4096-b305-69a6042f5b3f}</Project>
       <Name>PCU.Librerias.EntidadesNegocio</Name>

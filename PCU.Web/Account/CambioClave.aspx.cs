@@ -21,7 +21,7 @@ namespace PCU.Web
                 bool exito = obrUsuario.actualizarClave(obeUsuario.UsuarioId, txtClaveAnterior.Text, txtClaveNueva.Text);
                 if (exito)
                 {
-                    Response.Redirect("MenuPrincipal.aspx");
+                    Response.Redirect("Index");
                 }
                 else
                 {
@@ -32,7 +32,7 @@ namespace PCU.Web
 
         protected void btnCerrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MenuPrincipal.aspx");
+            Response.Redirect("Index");
         }
     }
 }

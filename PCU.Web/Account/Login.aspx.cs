@@ -17,22 +17,22 @@ namespace PCU.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Context.IsDebuggingEnabled) 
-            {
-                if (Session[VariableSesion.Usuario] == null)
-                {
-                    brUsuario obrUsuario = new brUsuario();
-                    beUsuario obeUsuario = obrUsuario.validarLogin("Enrique Espinal", "");
-                    Session[VariableSesion.Usuario] = obeUsuario;
-                    FormsAuthentication.RedirectFromLoginPage("Enrique Espinal", false);
-                    Response.Redirect("Index");
-                }
-                else 
-                {
-                    FormsAuthentication.RedirectFromLoginPage("Enrique Espinal", false);
-                    Response.Redirect("Index");
-                }
-            }
+            //if (Context.IsDebuggingEnabled) 
+            //{
+            //    if (Session[VariableSesion.Usuario] == null)
+            //    {
+            //        brUsuario obrUsuario = new brUsuario();
+            //        beUsuario obeUsuario = obrUsuario.validarLogin("Enrique Espinal", "");
+            //        Session[VariableSesion.Usuario] = obeUsuario;
+            //        FormsAuthentication.RedirectFromLoginPage("Enrique Espinal", false);
+            //        Response.Redirect("Index");
+            //    }
+            //    else 
+            //    {
+            //        FormsAuthentication.RedirectFromLoginPage("Enrique Espinal", false);
+            //        Response.Redirect("Index");
+            //    }
+            //}
 
             txtUsuario.Focus();
             if (!Page.IsPostBack)
@@ -74,15 +74,15 @@ namespace PCU.Web
 
                     Session[VariableSesion.Usuario] = obeUsuario;
                     FormsAuthentication.RedirectFromLoginPage(txtUsuario.Text, false);
-                    if (obeUsuario.EstadoUsuario.Equals("ACT")) Response.Redirect("Index");
-                    else Response.Redirect("CambioClave");
+                    if (obeUsuario.EstadoUsuario.Equals("ACT")) Response.Redirect("~/Index");
+                    else Response.Redirect("~/Account/CambioClave");
                 }
             }
         }
 
         protected void lbnRecordarClave_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/SinLogin/EnvioClave.aspx");
+            Response.Redirect("~/Account/EnvioClave.aspx");
         }
     }
 }

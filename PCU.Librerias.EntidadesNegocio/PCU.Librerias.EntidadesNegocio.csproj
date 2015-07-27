@@ -39,9 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bePersona.cs" />
+    <Compile Include="bePersonaDetalle.cs" />
+    <Compile Include="bePersonaGrid.cs" />
+    <Compile Include="bePersonaListas.cs" />
+    <Compile Include="bePersonaTelefono.cs" />
+    <Compile Include="bePersonaTelefonos.cs" />
+    <Compile Include="bePersona_TipoDoc_Estado.cs" />
     <Compile Include="beSistemaMenu.cs" />
+    <Compile Include="beUbigeo.cs" />
     <Compile Include="beUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\General.Librerias.EntidadesNegocio\General.Librerias.EntidadesNegocio.csproj">
+      <Project>{6d58261e-5a6b-4dcb-89d1-acd336259c92}</Project>
+      <Name>General.Librerias.EntidadesNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

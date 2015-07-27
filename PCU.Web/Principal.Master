@@ -16,11 +16,39 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <section class="header">
+            <div class="container" style="">
+                <div class="one columns">
+                    <img id="imgEmpresa" width="50" height="50" alt="" runat="server"/>
+                </div>
+                <div class="six columns">
+                    <h6 style="margin-top:15px;"><asp:Label ID="lblNombreSistema" runat="server" /></h6>
+                </div>
+                <div class="five columns">
+                    <table class="u-full-width header-details">
+                        <tr>
+                            <td><span class="header-info">Empresa: </span></td>
+                            <td><asp:Label ID="lblEmpresa" runat="server" CssClass="header-details"/></td>
+                        </tr>
+                        <tr>
+                            <td><span class="header-info">Sede: </span></td>
+                            <td><asp:Label ID="lblSede" runat="server" CssClass="header-details" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <asp:Label ID="lblHora" runat="server" />
+                <asp:HiddenField ID="hdfTiempoSesion" runat="server" />
+                <asp:HiddenField ID="hdfTiempoUsuario" runat="server" />
+                <asp:HiddenField ID="hdfContador" runat="server" />
+            </div>
+        </section>
+
         <!-- Primary Page Layout
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div class="container">
-            <nav>
-                <ul>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                <ul class="nav navbar-nav">
                     <asp:Repeater ID="dlsSistemaMenu" runat="server">
                         <ItemTemplate>
                             <li>
@@ -36,32 +64,20 @@
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><img id="imgUsuario" width="15" height="15" alt="" runat="server"/> <asp:Label ID="lblUsuario" runat="server" /></a>
+                        <ul>
+                            <li><a href="#">Configuracion</a></li>
+                            <li><a href="CambioClave">Cambio Contraseña</a></li>
+                            <li><asp:Button ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click" Text="Cerrar Sesion" /></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
             </nav>
-            <div>
-                                <img id="imgConfiguraUsuario" src="../Imagenes/Iconos/Configura.png" alt="" title="Configuración" />
-                                <asp:Menu ID="mnuConfiguraUsuario" runat="server" RenderingMode="List" OnMenuItemClick="configurarOpcionesUsuario">
-                                    <Items>
-                                        <asp:MenuItem Text="Configuracion" Value="1"></asp:MenuItem>
-                                        <asp:MenuItem Text="Cambio Contraseña" Value="2"></asp:MenuItem>
-                                        <asp:MenuItem Text="Cerrar Sesion" Value="3"></asp:MenuItem>
-                                    </Items>
-                                </asp:Menu> 
-                <asp:Label ID="lblNombreSistema" runat="server" />
-                <asp:Label ID="lblHora" runat="server" />
-                <img id="imgEmpresa" width="50" height="50" alt="" runat="server"/>
-                <img id="imgUsuario" width="50" height="50" alt="" runat="server"/>
-                <asp:Label ID="lblUsuario" runat="server" />
-                <asp:Label ID="lblEmpresa" runat="server" />
-                <asp:Label ID="lblSede" runat="server" />
-                <asp:Button ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click" />
-                <asp:Button ID="btnContinuarSesion" runat="server" OnClick="btnContinuarSesion_Click" />
-                <asp:HiddenField ID="hdfTiempoSesion" runat="server" />
-                <asp:HiddenField ID="hdfTiempoUsuario" runat="server" />
-                <asp:HiddenField ID="hdfContador" runat="server" />
-                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">          
-                        </asp:ContentPlaceHolder>
-            </div>
-        </div>
+            <asp:ContentPlaceHolder id="mainBody" runat="server">          
+            </asp:ContentPlaceHolder>
         <!-- End Document
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     </form>

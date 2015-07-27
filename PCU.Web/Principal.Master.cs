@@ -96,12 +96,12 @@ namespace PCU.Web
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login");
         }
 
-        protected void btnContinuarSesion_Click(object sender, EventArgs e)
-        {
-            beUsuario obeUsuario = (beUsuario)Session["Usuario"];
-        }
+        //protected void btnContinuarSesion_Click(object sender, EventArgs e)
+        //{
+        //    beUsuario obeUsuario = (beUsuario)Session["Usuario"];
+        //}
     }
 }

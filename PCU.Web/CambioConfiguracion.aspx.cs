@@ -22,14 +22,14 @@ namespace PCU.Web
                     txtUsuario.Text = obeUsuario.NombreCompleto;
                     txtNombrePreferido.Text = obeUsuario.NombrePreferidoUsuario;
                     string ruta = Server.MapPath("~/Estilos/");
-                    string[] archivos = Directory.GetFiles(ruta, "*.css");
-                    string nombre = "";
-                    foreach (string archivo in archivos)
-                    {
-                        nombre = Path.GetFileNameWithoutExtension(archivo);
-                        ddlEstiloWeb.Items.Add(new ListItem(nombre, nombre));
-                    }
-                    ddlEstiloWeb.SelectedValue = obeUsuario.TipoEstiloWeb;
+                    //string[] archivos = Directory.GetFiles(ruta, "*.css");
+                    //string nombre = "";
+                    //foreach (string archivo in archivos)
+                    //{
+                    //    nombre = Path.GetFileNameWithoutExtension(archivo);
+                    //    ddlEstiloWeb.Items.Add(new ListItem(nombre, nombre));
+                    //}
+                    //ddlEstiloWeb.SelectedValue = obeUsuario.TipoEstiloWeb;
                     imgFoto.Src = Imagen.obtenerUrl(obeUsuario.UsuarioId, "Usuarios");
                 }
             }
@@ -54,7 +54,7 @@ namespace PCU.Web
                         if (File.Exists(archivo)) File.Delete(archivo);
                         fupFoto.PostedFile.SaveAs(archivo);
                     }
-                    Response.Redirect("MenuPrincipal.aspx");
+                    Response.Redirect("Index");
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace PCU.Web
 
         protected void btnCerrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MenuPrincipal.aspx");
+            Response.Redirect("Index");
         }
     }
 }

@@ -21,14 +21,14 @@ namespace PCU.Web
 
         void Application_AcquireRequestState(object sender, EventArgs e)
         {
-            HttpContext context = HttpContext.Current;
-            if (context.Request.Path != "/Login") {
-                // CheckSession() inlined
-                if (context.Session != null && context.Session[VariableSesion.Usuario] == null)
-                {
-                    context.Response.Redirect("Login");
-                }
-            }
+            //HttpContext context = HttpContext.Current;
+            //if (context.Request.Path != "/Login") {
+            //    // CheckSession() inlined
+            //    if (context.Session != null && context.Session[VariableSesion.Usuario] == null)
+            //    {
+            //        context.Response.Redirect("Login");
+            //    }
+            //}
 
         }
     }
