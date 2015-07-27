@@ -83,12 +83,12 @@ namespace PCU.Web
             {
                 if (e.Item.Value.Equals("2"))
                 {
-                    Response.Redirect("CambioClave");
+                    Response.Redirect("~/Account/CambioClave");
                 }
                 else
                 {
                     FormsAuthentication.SignOut();
-                    Response.Redirect("Login");
+                    Response.Redirect("~/Account/Login");
                 }
             }
         }
@@ -96,7 +96,7 @@ namespace PCU.Web
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
-            Response.Redirect("Login");
+            Response.Redirect("~/Account/Login");
         }
 
         //protected void btnContinuarSesion_Click(object sender, EventArgs e)

@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\CambioClave.aspx" />
+    <Content Include="CambioClave.aspx" />
     <Content Include="CambioConfiguracion.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\normalize.css" />
@@ -200,11 +200,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Account\CambioClave.aspx.cs">
+    <Compile Include="CambioClave.aspx.cs">
       <DependentUpon>CambioClave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\CambioClave.aspx.designer.cs">
+    <Compile Include="CambioClave.aspx.designer.cs">
       <DependentUpon>CambioClave.aspx</DependentUpon>
     </Compile>
     <Compile Include="CambioConfiguracion.aspx.cs">

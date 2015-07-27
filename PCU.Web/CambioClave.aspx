@@ -5,6 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainBody" runat="server">
     <div class="container">
+        <br />
         <h4 class="docs-header">Cambiar contrasena</h4>
         <br />
         <div class="row">
